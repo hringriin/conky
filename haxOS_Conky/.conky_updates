@@ -1,0 +1,39 @@
+# this file goes in ~
+background no
+use_xft yes
+xftfont monospace:pixelsize=11
+xftalpha 1
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_graph_borders yes
+draw_borders no
+default_color cyan
+default_shade_color black
+default_outline_color white
+alignment bl
+gap_x 500
+gap_y 100
+cpu_avg_samples 10
+override_utf8_locale yes
+
+minimum_size 225
+maximum_width 225
+color2 DC143C
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+#${texeci 3600 checkupdates > /home/$USER/.conky/haxOS_Conky/.updates 2>&1}
+#${exec /home/$USER/.conky/haxOS_Conky/update.bash /home/$USER/.conky/haxOS_Conky/.update}
+ ┌───────────────────┐
+┌┤  Package Updates  │
+│└───────────────────┘
+│
+▼
+${execi 1200 checkupdates > /home/$USER/.conky/haxOS_Conky/.updates 2>&1}
+${execi 1200 /home/$USER/.conky/haxOS_Conky/update.bash /home/$USER/.conky/haxOS_Conky/.updates}
+${execi 1200 cat /home/$USER/.conky/haxOS_Conky/.update-list}

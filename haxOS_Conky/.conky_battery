@@ -1,0 +1,44 @@
+# this file goes in ~
+update_interval 5
+background no
+use_xft yes
+xftfont monospace:pixelsize=12
+xftalpha 1
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_borders no
+draw_graph_borders yes
+default_color cyan
+default_shade_color black
+default_outline_color white
+alignment tr
+gap_x 270
+gap_y 0
+cpu_avg_samples 10
+override_utf8_locale yes
+
+mpd_host 192.168.2.35
+mpd_port 6600
+
+minimum_size 210 140
+maximum_width 220
+color2 DC143C
+
+color3 FF0000
+color4 FFFF00
+color5 00BB00
+color6 00FF00
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿◂◀
+
+${alignr}${offset -35}┌─────────────┐
+${alignr}│   battery   ├────┐
+${alignr}└─────────────┘    │
+${alignr}                   │
+${eval ${execp /home/hringriin/.conky/haxOS_Conky/checkBatteryState.bash 0}} ${color}

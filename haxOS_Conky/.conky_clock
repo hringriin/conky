@@ -1,0 +1,52 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Dinreg:pixelsize=165
+override_utf8_locale yes
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_argb_visual yes
+#own_window_argb_value 100
+
+alignment tl
+gap_x 4
+gap_y -25
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+draw_borders no
+
+#default_color BDB5A1
+default_color cyan
+default_shade_color 1d1d1d
+color0 ffffff
+color1 ffffff
+color2 cyan
+color3 DC143C
+
+
+TEXT
+${voffset -110}${offset 8}${font Monospace:pixelsize=20}${color3}[ ${color2}${time %S}${color3} ]${color}${font}
+${color3}${voffset -200}${time %H}${color}
+${color2}${voffset -100}${time %M}${color}

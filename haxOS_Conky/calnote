@@ -1,0 +1,3 @@
+#/bin/bash
+
+printf '| sed s/%s'"'"'\\b'"'"'/'"'"'${font Monospace:bold:pixelsize=11}${color3}'"'"'%d'"'"'${font}${color}'"'"'/ \\\n' "$*" "$*" >> .calendar.sh

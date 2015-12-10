@@ -1,0 +1,41 @@
+# this file goes in ~
+background no
+use_xft yes
+xftfont monospace:pixelsize=11
+xftalpha 1
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+stippled_borders 0
+default_color cyan
+default_shade_color black
+default_outline_color white
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer no
+minimum_size 150 100
+maximum_width 550
+text_buffer_size 2048
+color1 cyan
+color2 DC143C
+color3 FFFF00
+
+alignment top_left
+gap_x 500
+gap_y 638
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+                       
+┌────────┐            
+│  MAIL  ├───────●
+└────────┘             
+${texeci 1800 python2.7 /home/$USER/.conky/pygmail.py}

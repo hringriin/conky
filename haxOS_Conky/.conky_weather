@@ -1,0 +1,48 @@
+# this file goes in ~
+background no
+use_xft yes
+xftfont monospace:pixelsize=11
+xftalpha 1
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+stippled_borders 0
+default_color cyan
+default_shade_color black
+default_outline_color white
+alignment top_left
+gap_x 270
+gap_y 10
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer no
+minimum_size 190 230
+maximum_width 190
+text_buffer_size 2048
+color1 cyan
+color2 DC143C
+color3 FFFF00
+imlib_cache_size 409600
+
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+ ┌──────────┐
+┌┤ FORECAST │
+│└───┬──────┘
+${texeci 900 python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | head -n 7 && cp /home/$USER/.conky/haxOS_Conky/.conky_weather_icons/$(python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | grep "Condition" | awk '{print $4}').png /home/$USER/.conky/haxOS_Conky/Sky.png}
+│
+│
+▼
+${image /home/hringriin/.conky/haxOS_Conky/Sky.png -p 20,150 -s 65x65 -n}
+${voffset -40}${goto 100}Tomorrow
+${voffset 10}${goto 135}${font Monospace:bold:pixelsize=12}${texeci 900 python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | grep "Highs" | awk '{print $4, $5}' && cp /home/$USER/.conky/haxOS_Conky/.conky_weather_icons/$(python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | grep "Sky" | awk '{print $4}').png /home/$USER/.conky/haxOS_Conky/Sky_Tomorrow.png}${font}${image /home/hringriin/.conky/haxOS_Conky/Sky_Tomorrow.png -p 95,155 -s 35x35 -n}

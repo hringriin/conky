@@ -1,0 +1,2 @@
+0   */1 *   *   *   checkupdates > /home/hringriin/.conky/haxOS_Conky/.updates 2>&1
+1   */1 *   *   *   /home/hringriin/.conky/haxOS_Conky/update.bash /home/hringriin/.conky/haxOS_Conky/.updates

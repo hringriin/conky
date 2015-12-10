@@ -1,0 +1,41 @@
+# this file goes in ~
+background no
+use_xft yes
+xftfont monospace:pixelsize=11
+xftalpha 1
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_borders no
+draw_graph_borders yes
+default_color cyan
+default_shade_color black
+default_outline_color white
+alignment bl
+gap_x 12
+gap_y 10
+cpu_avg_samples 10
+override_utf8_locale yes
+
+mpd_host 192.168.2.35
+mpd_port 6600
+
+minimum_size 500
+maximum_width 470
+color2 DC143C
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+ ┌───────────────────────────────┐
+┌┤  MUSIC PLAYER DAEMON - Sorth  │
+│└───────────────────────────────┘
+│
+├─ Status: ${mpd_status} / Volume: ${mpd_vol}
+├─ Artist: ${mpd_artist}
+├─ Title : ${mpd_title}
+├─ Album : ${mpd_album}
+${color2}${mpd_percent}% ${mpd_bar 3,400}${color}

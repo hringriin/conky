@@ -1,0 +1,121 @@
+# this file goes in ~
+
+
+background yes
+use_xft yes
+xftfont monospace:pixelsize=9
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+stippled_borders 0
+border_margin 4
+border_width 0
+default_color cyan
+default_shade_color black
+default_outline_color white
+alignment top_left
+gap_x 950
+gap_y 5
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer yes
+text_buffer_size 16000
+
+maximum_width 550
+minimum_size 420 0
+
+#color1 DC143C
+color1 cyan
+color2 CB032B
+color3 00FF00
+color4 FFFF00
+color5 FF0000
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+${alignr}${offset -65}${voffset -10}${font DejaVu Sans:pixelsize=30}${color2}Arch${color}Linux${font}
+${alignr}${offset -145}▲
+${alignr}${offset -10}└──────────────────────────┐
+${alignr}${offset -10}$font │
+${alignr}${offset -10}$font ${nodename} -─┤
+${alignr}${offset -10}$font ${exec uname -r | cut -c 1-14}      kernel -─┤    │
+${alignr}${offset -10}$font $machine        arch -─┤    │
+${alignr}${offset -10}$font $uptime      uptime -─┘    │
+${alignr}${offset -10}$font │
+${alignr}${offset -10}$font system -${color1}─┤${color}
+${alignr}${offset -10}$font cpu -─┤    │
+${alignr}${offset -10}$font used -─┤    │    │
+${alignr}${offset -10}${color2}[${cpu 1}%]${color} CPU1 | ${color2}[${color}${color2}${cpu 2}%]${color} CPU2 -─┤    │    │    │
+${alignr}${offset 10}$font ${color2}[${cpu 3}%]${color} CPU3 | ${color2}[${color}${color2}${cpu 4}%]${color} CPU4 -─┘    │    │    │
+${alignr}${offset -10}$font │    │    │
+${alignr}${offset -10}$font freq -─┤    │    │
+${alignr}$font ${color1}[${color} ${freq 1}mhz ${color1}]${color} cpu1 -─┤    │    │    │
+${alignr}$font ${color1}[${color} ${freq 2}mhz ${color1}]${color} cpu2 -─┘    │    │    │
+${alignr}$font ${color1}[${color} ${freq 3}mhz ${color1}]${color} cpu3 -─┤    │    │    │
+${alignr}$font ${color1}[${color} ${freq 4}mhz ${color1}]${color} cpu4 -─┘    │    │    │
+${alignr}${offset -10}$font │    │    │
+${alignr}$font ${color1}[${color} $loadavg ${color1}]${color} load -─┤    │    │
+${alignr}$font ${color2}[${color} ${top name 1}  ${top cpu 1} ${color2}]${color} -─┤    │    │
+${alignr}$font ${color2}[${color} ${top name 2}  ${top cpu 2} ${color2}]${color} -─┤    │    │
+${alignr}$font ${color2}[${color} ${top name 3}  ${top cpu 3} ${color2}]${color} -─┤    │    │
+${alignr}$font ${color2}[${color} ${top name 4}  ${top cpu 4} ${color2}]${color} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font ram -─┤    │
+${alignr}$font ${color1}[${color} $memperc% ${color1}]${color} used -─┘    │    │
+${alignr}$font ${color1}[${color} $mem/$memmax ${color1}]${color} -─┘         │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font processes -─┤    │
+${alignr}$font ${color1}[${color} $processes ${color1}]${color}   total -─┤    │    │
+${alignr}$font ${color1}[${color} $running_processes ${color1}]${color} running -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font temperature -─┤    │
+${alignr}$font ${color1}[${color} ${exec sensors | grep -m 1 temp1 | cut -c 16-17} ${color1}]${color} tmp1 -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}${offset -10}$font fan-speed -─┘    │
+${alignr}$font ${color1}[${color} ${exec sensors | grep -m 1 fan1 | cut -c 14-21} ${color1}]${color} fan1 -─┘         │
+#${alignr${offset -10}}$font ${color1}[${color} ${if_match ${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}>=65}${color2}${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}${else}${color1}${exec sensors | grep -m 1 temp1 | awk '{print $2}' | cut -c 2-3}${endif}${color}${color} ${color1}]${color} tmp1 -─┘         │
+${alignr}${offset -10}$font │
+${alignr}${offset -10}$font resources -─┤
+${alignr}$font ${color1}[${color} $diskio_read ${color1}]${color}   read -─┤    │
+${alignr}$font ${color1}[${color} $diskio_write ${color1}]${color}  write -─┤    │
+${alignr}${offset -10}$font │    │    │
+${alignr}$font ${color2}[${color} ${top_mem name 1}  ${top_mem mem 1} ${color2}]${color} -─┤    │    │
+${alignr}$font ${color2}[${color} ${top_mem name 2}  ${top_mem mem 2} ${color2}]${color} -─┤    │    │
+${alignr}$font ${color2}[${color} ${top_mem name 3}  ${top_mem mem 3} ${color2}]${color} -─┤    │    │
+${alignr}$font ${color2}[${color} ${top_mem name 4}  ${top_mem mem 4} ${color2}]${color} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}$font ${color1}[${color} ${fs_used /boot} / ${fs_size /boot} ${color1}]${color} boot -─┤    │
+${alignr}${offset 5}$font ${color1}[${color} ${fs_bar 5,120 /boot/} ${color1}]${color} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}$font ${color1}[${color} $swapperc% - $swap/ $swapmax ${color1}]${color} swap -─┤    │
+${alignr}${offset 5}$font ${color1}[${color} ${swapbar 5,120} ${color1}]${color} -─┘    │    │
+${alignr}${offset -10}$font │    │
+${alignr}$font ${color1}[${color} ${fs_used /} / ${fs_size /} ${color1}]${color} root -─┘    │
+${alignr}${offset 5}$font ${color1}[${color} ${fs_bar 5,120 /} ${color1}]${color} -─┘         │
+#${alignr${offset -10}}$font ${color1}[${color} ${fs_used /usr/local}/${fs_size /usr/local} ${color1}]${color} local -─┘    │
+#${alignr${offset -10}}$font ${color1}[${color} ${fs_bar 5,120 /home/Container/} ${color1}]${color} -─┘         │
+${alignr}${offset -10}$font │
+${alignr}${offset -10}$font net -────────────────────────────────────────────┘
+${if_match "${addr enp0s25}" != "No Address"}${alignr}${offset -250}${color1}[${color} ${addr enp0s25} ${color1}]${color}${else}${alignr}${offset -240}$font ${color1}[${color} ${color2}${addr enp0s25}${color} ${color1}]${color}${endif} ethernet ip -─┤
+${if_match "${addr wlp3s0}" != "No Address"}${alignr}${offset -250}${color1}[${color} ${addr wlp3s0} ${color1}]${color}${else}${alignr}${offset -240}$font ${color1}[${color} ${color2}${addr wlp3s0}${color} ${color1}]${color}${endif}     wifi ip -─┤
+${alignr}${offset -250}$font ${color1}[${color} ${wireless_essid} ${color1}]${color} essid -─┤
+${alignr}${offset -240}$font wlan0
+${alignr}${offset -35}$font ${color1}[${color} ${upspeed wlp3s0} ${color1}]${color}   up -─┤│├─- up   $font ${color1}${color} ${upspeedgraph wlp3s0 10,120 DC143C DC143C} ${color1}${color}
+${alignr}${offset -245}$font │││
+${alignr}${offset -35}$font ${color1}[${color} ${downspeed wlp3s0} ${color1}]${color} down -─┘│└─- down $font ${color1}${color} ${downspeedgraph wlp3s0 10,120 DC143C DC143C} ${color1}${color}
+${alignr}${offset -250}$font │
+${alignr}${offset -245}$font eth0
+${alignr}${offset -35}$font ${color1}[${color} ${upspeed enp0s25} ${color1}]${color}   up -─┤│├─- up   $font ${color1}${color} ${upspeedgraph enp0s25 10,120 DC143C DC143C} ${color1}${color}
+${alignr}${offset -245}$font │││
+${alignr}${offset -35}$font ${color1}[${color} ${downspeed enp0s25} ${color1}]${color} down -─┘│└─- down $font ${color1}${color} ${downspeedgraph enp0s25 10,120 DC143C DC143C} ${color1}${color}

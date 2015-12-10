@@ -1,0 +1,36 @@
+# this file goes in ~
+background no
+use_xft yes
+xftfont monospace:pixelsize=11
+xftalpha 1
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+border_width 0
+default_color cyan
+default_shade_color black
+default_outline_color white
+alignment top_left
+gap_x 440
+gap_y 12
+cpu_avg_samples 10
+override_utf8_locale yes
+text_buffer_size 2048
+
+minimum_size 600 200
+maximum_width 600
+
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+ ┌─────────────┐
+┌┤  TCP / TOR  │
+│└─────────────┘
+${execi 15 ss -t -a | grep -e "ESTAB" -e "9050" | tail -n 8 | sed 's/^/├─  /' | sed 's/.$/─┤/'}
+#${execi 60 ss -t -a | grep "9050"}
