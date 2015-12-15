@@ -1,6 +1,6 @@
 #/bin/bash
 # update
-file="/home/hringriin/.conky/haxOS_Conky/.update-list"
+file="/home/$USER/.conky/haxOS_Conky/.update-list"
 
 rm -f $file
 touch $file

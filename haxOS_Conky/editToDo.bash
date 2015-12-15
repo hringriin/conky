@@ -1,4 +1,4 @@
 #!/bin/bash
 # editToDo
 
-vim /home/hringriin/.conky/haxOS_Conky/.shitstodo
+vim /home/$USER/.conky/haxOS_Conky/.shitstodo

@@ -1,4 +1,4 @@
 #/bin/bash
 
 #printf '● %s\n' "$*" >> .shitstodo
-printf '▷ %s\n' "$*" >> /home/hringriin/.conky/haxOS_Conky/.shitstodo
+printf '▷ %s\n' "$*" >> /home/$USER/.conky/haxOS_Conky/.shitstodo
