@@ -21,7 +21,7 @@ gap_y 130
 cpu_avg_samples 10
 override_utf8_locale yes
 
-mpd_host 134.102.209.202
+mpd_host 8.8.8.8
 mpd_port 6600
 
 minimum_size 500
