@@ -20,4 +20,4 @@ cd "/home/$USER/.conky/haxOS_Conky"
 conky -c "/home/$USER/.conky/haxOS_Conky/.conkyrc" &
 sleep 5
 cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/hringriin/.conky/haxOS_Conky/.conky_battery" &
+conky -c "/home/$USER/.conky/haxOS_Conky/.conky_battery" &
