@@ -36,6 +36,16 @@ else
     exit 127
 fi
 
+# unzip the tar ball to home folder
+echo -e "$FATYELLOW"
+echo -e "Decompressing archive ..."
+echo -e "$NORMAL"
+tar -zxvf haxOS.tar.gz -C ~
+chmod +x $haxOSdir/../conky-startup.sh
+echo -e "$FATGREEN"
+echo -e "...done!"
+echo -e "$NORMAL"
+
 # pip speedtest-cli
 echo -e "$FATYELLOW"
 echo -e "Installing speedtest-cli for python ..."
