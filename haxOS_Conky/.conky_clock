@@ -47,6 +47,6 @@ color3 DC143C
 
 
 TEXT
-${voffset -110}${offset 8}${font Monospace:pixelsize=20}${color3}[ ${color2}${time %S}${color3} ]${color}${font}
-${color3}${voffset -200}${time %H}${color}
+${voffset -100}${offset 8}${font Monospace:pixelsize=20}${color3}[ ${color2}${time %S}${color3} ]${color}${font}
+${color3}${voffset -195}${time %H}${color}
 ${color2}${voffset -100}${time %M}${color}
