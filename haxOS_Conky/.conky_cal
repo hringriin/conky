@@ -29,9 +29,9 @@ color1 cyan
 color2 DC143C
 color3 FFFF00
 
-alignment top_left
-gap_x 12
-gap_y 300
+alignment top_right
+gap_x 260
+gap_y 200
 
 TEXT
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿

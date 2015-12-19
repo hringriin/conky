@@ -18,8 +18,8 @@ default_color cyan
 default_shade_color black
 default_outline_color white
 alignment top_left
-gap_x 270
-gap_y 10
+gap_x 13
+gap_y 280
 no_buffers yes
 cpu_avg_samples 2
 net_avg_samples 2

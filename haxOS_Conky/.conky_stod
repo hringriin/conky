@@ -18,7 +18,7 @@ default_shade_color black
 default_outline_color white
 alignment top_left
 gap_x 270
-gap_y 350
+gap_y 10
 cpu_avg_samples 10
 override_utf8_locale yes
 color2 DC143C
