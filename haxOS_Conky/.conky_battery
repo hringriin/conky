@@ -16,9 +16,9 @@ draw_graph_borders yes
 default_color cyan
 default_shade_color black
 default_outline_color white
-alignment tr
-gap_x 270
-gap_y 0
+alignment br
+gap_x 460
+gap_y 60
 cpu_avg_samples 10
 override_utf8_locale yes
 
