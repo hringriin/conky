@@ -12,20 +12,20 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 draw_shades no
 draw_borders no
-draw_graph_borders yes
+draw_graph_borders 
 default_color cyan
 default_shade_color black
 default_outline_color white
 alignment br
-gap_x 460
-gap_y 60
+gap_x 450
+gap_y 5
 cpu_avg_samples 10
 override_utf8_locale yes
 
 mpd_host 192.168.2.35
 mpd_port 6600
 
-minimum_size 210 140
+minimum_size 210 190
 maximum_width 220
 color2 DC143C
 
@@ -33,6 +33,7 @@ color3 FF0000
 color4 FFFF00
 color5 00BB00
 color6 00FF00
+color7 FFAA00
 
 TEXT
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿◂◀
