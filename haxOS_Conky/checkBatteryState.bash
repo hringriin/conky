@@ -46,103 +46,125 @@ else
     acval="-1"
 fi
 
-if [[ $acval -eq "-1" ]] ; then
-    echo -e "\${alignr}\${color4}\${blink 'AC vanished - Good time to PANIC!'}\${color}      AC ◀─┤"
-elif [[ $acval -eq 0 ]] ; then
-    echo -e "\${alignr}\${color3}\${acpiacadapter}\${color}        AC ◀─┤"
-elif [[ $acval -eq 1 ]] ; then
-    echo -e "\${alignr}\${color5}\${acpiacadapter}\${color}        AC ◀─┤"
-fi
+case $acval in
+    -1)
+        echo -e "\${alignr}\${offset 0}\${color4}\${blink vanished: \${color3}P A N I C}\${color}    AC ◀─┤"
+        ;;
+    0)
+        echo -e "\${alignr}\${color3}\${acpiacadapter}\${color}        AC ◀─┤"
+        ;;
+    1)
+        echo -e "\${alignr}\${color5}\${acpiacadapter}\${color}        AC ◀─┤"
+        ;;
+esac
 
 echo -e "\${alignr}│"
 
 # only internal installed
-if [[ $value -eq 1 ]] ; then
-    if [[ $batval0 -ge 98 ]] ; then
-        echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  internal ◀─┘"
-    elif [[ $batval0 -lt 98 ]] ; then
-        if [[ $batval0 -gt 50 ]] ; then
-            echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT0}\${color} ◀─┘"
-        fi
-    elif [[ $batval0 -lt 50 ]] ; then
-        if [[ $batval0 -gt 20 ]] ; then
-            echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT0}\${color} ◀─┘"
-        fi
-    elif [[ $batval0 -lt 20 ]] ; then
-        if [[ $batval0 -ge 0 ]] ; then
-            echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT0}\${color} ◀─┘"
-        fi
-    elif [[ $batval0 -lt 0 ]] ; then
-        echo -e "\${alignr}\${color3}\${blink !! EMPTY !!}\${color}  internal ◀─┘"
-    fi
+case $value in
+    1)
+        case $batval0 in
+            0)
+                echo -e "\${alignr}\${color7}\${blink !! EMPTY !!}\${color}  internal ◀─┘"
+            ;;
+            [2-4]*)
+                echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color4}\${battery_time BAT0}\${color} ◀─┘"
+            ;;
+            [5-8]* | 9[0-7])
+                echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT0}\${color} ◀─┘"
+            ;;
+            9[8-9] | 100)
+                echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  internal ◀─┘"
+            ;;
+            [1-19]*)
+                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color3}\${battery_time BAT0}\${color} ◀─┘"
+            ;;
+            *)
+                echo -e "this is interesting,\nint, no int bat!"
+            ;;
+        esac
+    ;;
 # internal and slice installed
-elif [[ $value -eq 2 ]] ; then
-    if [[ $batval0 -ge 98 ]] ; then
-        echo -e "\${alignr}\${color6}FULL\${color}  internal ◀─┘"
-    elif [[ $batval0 -lt 98 ]] ; then
-        if [[ $batval0 -gt 50 ]] ; then
-            echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
-            echo -e "\${alignr}\${color5}\${battery_time BAT0}\${color} ◀─┘    │"
-        fi
-    elif [[ $batval0 -lt 50 ]] ; then
-        if [[ $batval0 -gt 20 ]] ; then
-            echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
-            echo -e "\${alignr}\${color4}\${battery_time BAT0}\${color} ◀─┘    │"
-        fi
-    elif [[ $batval0 -lt 20 ]] ; then
-        if [[ $batval0 -ge 0 ]] ; then
-            echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
-            echo -e "\${alignr}\${color3}\${battery_time BAT0}\${color} ◀─┘    │"
-        fi
-    elif [[ $batval0 -lt 0 ]] ; then
-        echo -e "\${alignr}\${color3}\${blink !! EMPTY !!}\${color}  internal ◀─┤"
-    fi
+    2)
+        case $batval0 in
+            0)
+                echo -e "\${alignr}\${color7}\${blink !! EMPTY !!}\${color}  internal ◀─┤"
+            ;;
+            [2-4]*)
+                echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
+                echo -e "\${alignr}\${color4}\${battery_time BAT0}\${color} ◀─┘    │"
+            ;;
+            [5-8]* | 9[0-7])
+                echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
+                echo -e "\${alignr}\${color5}\${battery_time BAT0}\${color} ◀─┘    │"
+            ;;
+            9[8-9] | 100)
+                echo -e "\${alignr}\${color6}FULL\${color}  internal ◀─┤"
+            ;;
+            [1-19]*)
+                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
+                echo -e "\${alignr}\${color3}\${battery_time BAT0}\${color} ◀─┘    │"
+            ;;
+            *)
+                echo -e "this is interesting,\nint+slice, no int bat!"
+            ;;
+        esac
 
-    echo -e "\${alignr}│"
+        echo -e "\${alignr}│"
 
-    if [[ $batval1 -ge 98 ]] ; then
-        echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  external ◀─┘"
-    elif [[ $batval1 -lt 98 ]] ; then
-        if [[ $batval1 -gt 50 ]] ; then
-            echo -e "\${alignr}\${offset 0}\${color5}\${battery_bar 10,75 BAT1} $batval1 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT1}\${color} ◀─┘"
-        fi
-    elif [[ $batval1 -lt 50 ]] ; then
-        if [[ $batval1 -gt 20 ]] ; then
-            echo -e "\${alignr}\${offset 0}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color4}\${battery_time BAT1}\${color} ◀─┘"
-        fi
-    elif [[ $batval1 -lt 20 ]] ; then
-        if [[ $batval1 -ge 0 ]] ; then
-            echo -e "\${alignr}\${offset 7}\${color3}\${battery_bar 10,75 BAT1} $batval1 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color3}\${battery_time BAT1}\${color} ◀─┘"
-        fi
-    elif [[ $batval1 -lt 0 ]] ; then
-        echo -e "\${alignr}\${color3}\${blink !! EMPTY !!}\${color}  external ◀─┘"
-    fi
+        case $batval1 in
+            0)
+                echo -e "\${alignr}\${offset 7}\${color7}\${blink !! EMPTY !!}\${color}  external ◀─┘"
+            ;;
+            [2-4]*)
+                echo -e "\${alignr}\${offset 7}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
+                echo -e "\${alignr}\${offset 7}\${color4}\${battery_time BAT1}\${color} ◀─┘    │"
+            ;;
+            [5-8]* | 9[0-7])
+                echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT1}\${color} ◀─┘"
+            ;;
+            9[8-9] | 100)
+                echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  external ◀─┘"
+            ;;
+            [1-19]*)
+                echo -e "\${alignr}\${offset 7}\${color3}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
+                echo -e "\${alignr}\${offset 7}\${color3}\${battery_time BAT1}\${color} ◀─┘    │"
+            ;;
+            *)
+                echo -e "this is interesting,\nint+slice, no int bat!"
+            ;;
+        esac
+    ;;
 # no internal bat, but slice installed
-elif [[ $value -eq 3 ]] ; then
-    if [[ $batval1 -ge 98 ]] ; then
-        echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  external ◀─┘"
-    elif [[ $batval1 -lt 98 ]] ; then
-        if [[ $batval1 -gt 50 ]] ; then
-            echo -e "\${alignr}\${offset 0}\${color5}\${battery_bar 10,75 BAT1} $batval1 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT1}\${color} ◀─┘"
-        fi
-    elif [[ $batval1 -lt 50 ]] ; then
-        if [[ $batval1 -gt 20 ]] ; then
-            echo -e "\${alignr}\${offset 0}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color4}\${battery_time BAT1}\${color} ◀─┘"
-        fi
-    elif [[ $batval1 -lt 20 ]] ; then
-        if [[ $batval1 -ge 0 ]] ; then
-            echo -e "\${alignr}\${offset 0}\${color3}\${battery_bar 10,75 BAT1} $batval1 %\${color}  internal ◀─┘"
-            echo -e "\${alignr}\${offset -28}\${color3}\${battery_time BAT1}\${color} ◀─┘"
-        fi
-    elif [[ $batval1 -lt 0 ]] ; then
-        echo -e "\${alignr}\${color3}\${blink !! EMPTY !!}\${color}  external ◀─┘"
-    fi
-fi
+    3)
+        case $batval1 in
+            0)
+                echo -e "\${alignr}\${color7}\${blink !! EMPTY !!}\${color}  external ◀─┤"
+            ;;
+            [2-4]*)
+                echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
+                echo -e "\${alignr}\${color4}\${battery_time BAT1}\${color} ◀─┘    │"
+            ;;
+            [5-8]* | 9[0-7])
+                echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
+                echo -e "\${alignr}\${color5}\${battery_time BAT1}\${color} ◀─┘    │"
+            ;;
+            9[8-9] | 100)
+                echo -e "\${alignr}\${color6}FULL\${color}  external ◀─┘"
+            ;;
+            [1-19]*)
+                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
+                echo -e "\${alignr}\${color3}\${battery_time BAT1}\${color} ◀─┘    │"
+            ;;
+            *)
+                echo -e "this is interesting,\nint+slice, no int bat!"
+            ;;
+        esac
+    ;;
+    0)
+        echo -e "\${alignr}\${offset 7}\${color4}\${blink no batteries found}\${color}  ◀─┘"
+esac
