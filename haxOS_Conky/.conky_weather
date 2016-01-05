@@ -25,8 +25,8 @@ cpu_avg_samples 2
 net_avg_samples 2
 override_utf8_locale yes
 use_spacer no
-minimum_size 190 230
-maximum_width 190
+minimum_size 220 230
+maximum_width 220
 text_buffer_size 2048
 color1 cyan
 color2 DC143C
