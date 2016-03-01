@@ -39,10 +39,14 @@ TEXT
  ┌──────────┐
 ┌┤ FORECAST │
 │└───┬──────┘
-${texeci 900 python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | head -n 7 && cp /home/$USER/.conky/haxOS_Conky/.conky_weather_icons/$(python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | grep "Condition" | awk '{print $4}').png /home/$USER/.conky/haxOS_Conky/Sky.png}
-│
+${texeci 900 python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py}
 │
 ▼
-${image /home/hringriin/.conky/haxOS_Conky/Sky.png -p 20,150 -s 65x65 -n}
-${voffset -40}${goto 100}Tomorrow
-${voffset 10}${goto 135}${font Monospace:bold:pixelsize=12}${texeci 900 python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | grep "Highs" | awk '{print $4, $5}' && cp /home/$USER/.conky/haxOS_Conky/.conky_weather_icons/$(python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | grep "Sky" | awk '{print $4}').png /home/$USER/.conky/haxOS_Conky/Sky_Tomorrow.png}${font}${image /home/hringriin/.conky/haxOS_Conky/Sky_Tomorrow.png -p 95,155 -s 35x35 -n}
+
+#${texeci 900 python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | head -n 7 && cp /home/$USER/.conky/haxOS_Conky/.conky_weather_icons/$(python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | grep "Condition" | awk '{print $4}').png /home/$USER/.conky/haxOS_Conky/Sky.png}
+#│
+#│
+#▼
+#${image /home/hringriin/.conky/haxOS_Conky/Sky.png -p 20,150 -s 65x65 -n}
+#${voffset -40}${goto 100}Tomorrow
+#${voffset 10}${goto 135}${font Monospace:bold:pixelsize=12}${texeci 900 python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | cut -c5- | grep --binary-files=text "Highs" | awk '{print $4, $5}' && cp /home/$USER/.conky/haxOS_Conky/.conky_weather_icons/$(python2.7 /home/$USER/.conky/haxOS_Conky/pyweath.py | cut -c5- | grep --binary-files=text "Sky" | awk '{print $4}').png /home/$USER/.conky/haxOS_Conky/Sky_Tomorrow.png}${font}${image /home/hringriin/.conky/haxOS_Conky/Sky_Tomorrow.png -p 95,155 -s 35x35 -n}
