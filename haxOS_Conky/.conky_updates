@@ -34,6 +34,6 @@ TEXT
 │└───────────────────┘
 │
 ▼
-${execi 1200 checkupdates > /home/$USER/.conky/haxOS_Conky/.updates 2>&1}
-${execi 1200 /home/$USER/.conky/haxOS_Conky/update.bash /home/$USER/.conky/haxOS_Conky/.updates}
-${execi 1200 cat /home/$USER/.conky/haxOS_Conky/.update-list}
+${execi 900 checkupdates > /home/$USER/.conky/haxOS_Conky/.updates 2>&1}
+${execi 900 /home/$USER/.conky/haxOS_Conky/update.bash /home/$USER/.conky/haxOS_Conky/.updates}
+${execi 900 cat /home/$USER/.conky/haxOS_Conky/.update-list}
