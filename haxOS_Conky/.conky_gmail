@@ -34,8 +34,8 @@ gap_y 638
 
 TEXT
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
-                       
-┌────────┐            
+
+┌────────┐
 │  MAIL  ├───────●
-└────────┘             
-${texeci 1800 python2.7 /home/$USER/.conky/pygmail.py}
+└────────┘
+${texeci 1800 python2.7 /home/$USER/.conky/haxOS_Conky/pygmail.py}
