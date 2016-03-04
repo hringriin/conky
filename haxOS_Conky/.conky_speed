@@ -15,25 +15,31 @@ draw_borders no
 draw_graph_borders yes
 stippled_borders 0
 border_margin 4
-border_width 0
+border_width 1
 default_color cyan
 default_shade_color black
 default_outline_color white
 alignment tr
-gap_x 270
+gap_x 250
 gap_y 0
 cpu_avg_samples 10
 override_utf8_locale yes
 
 minimum_size 150 120
-maximum_width 150
+maximum_width 350
 update_interval 1.0
 
 
 TEXT
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
 ┌───────────────┐
-│ SPEEDTEST.NET │
-└───────────────┘
+│ SPEEDTEST.NET ├────────────────────┐
+└───────────────┘                    │
+${alignr}▼
 ${texeci 3600 speedtest --simple > /home/$USER/.conky/haxOS_Conky/.speeds 2>&1}
 ${texeci 3600 cat /home/$USER/.conky/haxOS_Conky/.speeds}
+${voffset -39}${goto 180}${execpi 3600 echo -e "Last update:"}
+${goto 180}${execpi 3600 echo -e "  `date +%d.%m.%Y`"}
+${goto 180}${execpi 3600 echo -e "  `date '+%I:%M %p'`"}
+# there HAS TO BE an EMPTY last line
+
