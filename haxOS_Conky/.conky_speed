@@ -35,5 +35,5 @@ TEXT
 ┌───────────────┐
 │ SPEEDTEST.NET │
 └───────────────┘
-${texeci 25600 speedtest --simple > /home/$USER/.conky/haxOS_Conky/.speeds 2>&1}
-${exec cat /home/$USER/.conky/haxOS_Conky/.speeds}
+${texeci 3600 speedtest --simple > /home/$USER/.conky/haxOS_Conky/.speeds 2>&1}
+${texeci 3600 cat /home/$USER/.conky/haxOS_Conky/.speeds}
