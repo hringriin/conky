@@ -17,13 +17,10 @@ default_color cyan
 default_shade_color black
 default_outline_color white
 alignment br
-gap_x 450
+gap_x 700
 gap_y 5
 cpu_avg_samples 10
 override_utf8_locale yes
-
-mpd_host 192.168.2.35
-mpd_port 6600
 
 minimum_size 210 190
 maximum_width 220
