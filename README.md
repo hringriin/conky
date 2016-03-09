@@ -4,7 +4,8 @@ This is a set of conky-configuration files, bash- and python scripts.
 ![Screenshot](images/screenshot.png "Screenshot")
 
 Thanks to DavidDavioBlue, who provided the basis of this conky-setup on [deviantart.com][ddbda-link].  
-DDB also just adapted his version, the basis is provided [here][ddb-basis], also on DeviantArt.com.
+DDB also just adapted his version, the basis is provided [here][ddb-basis], also on DeviantArt.com.  
+Thanks to [Andrew][lunaticoandrew], who provided the basis of the gauges I used in my system panel.
 
 # Installation
 
@@ -19,7 +20,8 @@ List of affected files referring to the git file structure:
 
 # Bugs
 
-There are still some minor bugs. I you like, write a bug report.
+There are still some minor bugs. If you like, write a bug report.
 
 [ddbda-link]: http://daviddavioblue.deviantart.com/art/haxOS-Conky-454353060 "DavidDavioBlue - haxOS Conky on DeviantArt.com"
 [ddb-basis]: http://0x6c756b65.deviantart.com/art/slacker-conky-config-207760045 "0x6c756b65 - slacker conky config on DeviantArt.com"
+[lunaticoandrew]: http://www.webupd8.org/2011/06/conky-lunatico-rings-displays-system.html "Conky_Lunatico - by Andrew"
