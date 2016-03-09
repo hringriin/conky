@@ -42,6 +42,9 @@ color3 00FF00
 color4 FFFF00
 color5 FF0000
 
+lua_load ~/.conky/haxOS_Conky/conky_lunatico.lua
+lua_draw_hook_post main
+
 TEXT
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
 ${alignr}${offset -175}${font DejaVu Sans:pixelsize=30}Linux${color2}Mint${color}${font}
