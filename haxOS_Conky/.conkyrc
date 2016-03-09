@@ -44,9 +44,9 @@ color5 FF0000
 
 TEXT
 #leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
-${alignr}${offset -209}${font DejaVu Sans:pixelsize=30}${color2}Arch${color}Linux${font}
-${alignr}${offset -189}▲
-${alignr}└──────────────────────────┐
+${alignr}${offset -175}${font DejaVu Sans:pixelsize=30}Linux${color2}Mint${color}${font}
+${alignr}${offset -140}▲
+${alignr}└───────────────────┐
 ${alignr}$font │
 ${alignr}$font ${nodename} -─┤
 ${alignr}$font ${exec uname -r | cut -c 1-14}      kernel -─┤    │
