@@ -20,8 +20,8 @@ default_color cyan
 default_shade_color black
 default_outline_color white
 alignment tr
-gap_x 250
-gap_y 0
+gap_x 750
+gap_y 40
 cpu_avg_samples 10
 override_utf8_locale yes
 
