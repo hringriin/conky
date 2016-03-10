@@ -109,29 +109,3 @@ ${alignr}${offset -56}$font ┌─────────────┤
 ${alignr}${offset -56}$font ─┘             │
 ${alignr}${offset -56}$font │
 ${alignr}${offset -56}$font ─┘
-${alignr}$font │
-${alignr}$font │
-${alignr}$font resources ─┤
-${alignr}$font ${color2}[${color} $diskio_read ${color2}]${color}   read ─┤   │
-${alignr}$font ${color2}[${color} $diskio_write ${color2}]${color}  write ─┤   │
-${alignr}$font │   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 1}  ${top_mem mem 1} ${color2}]${color} ─┤   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 2}  ${top_mem mem 2} ${color2}]${color} ─┤   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 3}  ${top_mem mem 3} ${color2}]${color} ─┤   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 4}  ${top_mem mem 4} ${color2}]${color} ─┘   │   │
-${alignr}$font │   │
-${alignr}$font ${color2}[${color} ${fs_used /boot} / ${fs_size /boot} ${color2}]${color} boot ─┤   │
-${alignr}$font ${color2}[${color} ${fs_bar 5,120 /boot/} ${color2}]${color} ─┘   │   │
-${alignr}$font │   │
-${alignr}$font ${color2}[${color} $swap/ $swapmax ${color2}]${color} swap ─┤   │
-${alignr}$font ${color2}[${color} ${swapbar 5,120} ${color2}]${color} ─┘   │   │
-${alignr}$font │   │
-${alignr}$font ${color2}[${color} ${fs_used /} / ${fs_size /} ${color2}]${color} root ─┘   │
-${alignr}$font ${color2}[${color} ${fs_bar 5,120 /} ${color2}]${color} ─┘       │
-${alignr}$font │
-${alignr}$font net ────────────────────────────┘
-${if_match "${addr eth0}" != "No Address"}${alignr}${offset -217}${color2}[${color} ${addr eth0} ${color2}]${color}${else}${alignr}${offset -217}$font ${color2}[${color} ${color4}${addr eth0}${color} ${color2}]${color}${endif} ethernet ip ─┤
-${alignr}${offset -206}$font eth0
-${alignr}${offset -20}$font ${color2}[${color} ${upspeed eth0} ${color2}]${color}   up ─┤ ├─ up   $font ${color2}${color} ${upspeedgraph eth0 10,120 DC143C DC143C} ${color2}${color}
-${alignr}${offset -210}$font │ │
-${alignr}${offset -20}$font ${color2}[${color} ${downspeed eth0} ${color2}]${color} down ─┘ └─ down $font ${color2}${color} ${downspeedgraph eth0 10,120 DC143C DC143C} ${color2}${color}
