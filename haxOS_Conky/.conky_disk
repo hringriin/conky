@@ -14,7 +14,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 draw_shades no
 draw_outline no
-draw_borders no
+draw_borders yes
 draw_graph_borders yes
 stippled_borders 7
 border_margin 4
@@ -23,7 +23,7 @@ default_color 00FFFF
 default_shade_color 000000
 default_outline_color FFFFFF
 alignment top_right
-gap_x 10
+gap_x 350
 gap_y 35
 no_buffers yes
 cpu_avg_samples 2
@@ -32,8 +32,8 @@ override_utf8_locale yes
 use_spacer yes
 text_buffer_size 16000
 
-maximum_width 540
-minimum_size 480 0
+maximum_width 350
+minimum_size 350 0
 
 color1 DC143C
 color2 CB032B
@@ -42,7 +42,7 @@ color4 FFFF00
 color5 FF0000
 color6 008888
 
-lua_load ~/.conky/haxOS_Conky/syspanel.lua
+lua_load ~/.conky/haxOS_Conky/disk.lua
 lua_draw_hook_post main
 
 TEXT
