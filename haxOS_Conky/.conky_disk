@@ -14,7 +14,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 draw_shades no
 draw_outline no
-draw_borders yes
+draw_borders no
 draw_graph_borders yes
 stippled_borders 7
 border_margin 4
@@ -23,7 +23,7 @@ default_color 00FFFF
 default_shade_color 000000
 default_outline_color FFFFFF
 alignment top_right
-gap_x 350
+gap_x 320
 gap_y 35
 no_buffers yes
 cpu_avg_samples 2
@@ -32,8 +32,8 @@ override_utf8_locale yes
 use_spacer yes
 text_buffer_size 16000
 
-maximum_width 350
-minimum_size 350 0
+maximum_width 320
+minimum_size 320 600
 
 color1 DC143C
 color2 CB032B
@@ -45,22 +45,38 @@ color6 008888
 lua_load ~/.conky/haxOS_Conky/disk.lua
 lua_draw_hook_post main
 
+hddtemp_host 127.0.0.1
+
 TEXT
-#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
-${alignr}$font resources ─┤
-${alignr}$font ${color2}[${color} $diskio_read ${color2}]${color}   read ─┤   │
-${alignr}$font ${color2}[${color} $diskio_write ${color2}]${color}  write ─┤   │
-${alignr}$font │   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 1}  ${top_mem mem 1} ${color2}]${color} ─┤   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 2}  ${top_mem mem 2} ${color2}]${color} ─┤   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 3}  ${top_mem mem 3} ${color2}]${color} ─┤   │   │
-${alignr}$font ${color2}[${color} ${top_mem name 4}  ${top_mem mem 4} ${color2}]${color} ─┘   │   │
-${alignr}$font │   │
-${alignr}$font ${color2}[${color} ${fs_used /boot} / ${fs_size /boot} ${color2}]${color} boot ─┤   │
-${alignr}$font ${color2}[${color} ${fs_bar 5,120 /boot/} ${color2}]${color} ─┘   │   │
-${alignr}$font │   │
-${alignr}$font ${color2}[${color} $swap/ $swapmax ${color2}]${color} swap ─┤   │
-${alignr}$font ${color2}[${color} ${swapbar 5,120} ${color2}]${color} ─┘   │   │
-${alignr}$font │   │
-${alignr}$font ${color2}[${color} ${fs_used /} / ${fs_size /} ${color2}]${color} root ─┘   │
-${alignr}$font ${color2}[${color} ${fs_bar 5,120 /} ${color2}]${color} ─┘       │
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── │││ ▽▼△▲▵▴▾▿
+${alignr}${offset -104}┌────────────┐
+${alignr}${offset -27}│  Disk-I/O  ├──────────┐
+${alignr}${offset -27}└────────────┘          │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} boot ─┤
+${alignr}${offset -27} │   │
+${alignr}${offset -27} │   │
+${alignr}${offset -27} ${voffset -4}${diskiograph_read /dev/sdd1 14,100 00FF00 FF0000 -t -l} ${voffset 4}${color2}[ ${color}${diskio_read /dev/sdd1}${color2} ]${color}  read ┤   │
+${alignr}${offset -27} │   │
+${alignr}${offset -27} ${voffset -4}${diskiograph_write /dev/sdd1 14,100 00FF00 FF0000 -t -l} ${voffset 4}${color2}[ ${color}${diskio_write /dev/sdd1}${color2} ]${color} write ┘   │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} root ─┤
+${alignr}${offset -27} │   │
+${alignr}${offset -27} │   │
+${alignr}${offset -27} ${voffset -4}${diskiograph_read /dev/sdd3 14,100 00FF00 FF0000 -t -l} ${voffset 4}${color2}[ ${color}${diskio_read /dev/sdd3}${color2} ]${color}  read ┤   │
+${alignr}${offset -27} │   │
+${alignr}${offset -27} ${voffset -4}${diskiograph_write /dev/sdd3 14,100 00FF00 FF0000 -t -l} ${voffset 4}${color2}[ ${color}${diskio_write /dev/sdd3}${color2} ]${color} write ┘   │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} │
+${alignr}${offset -27} hringriin (nas) ─┘
