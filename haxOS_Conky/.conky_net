@@ -1,0 +1,55 @@
+# this file goes in ~
+
+
+background yes
+use_xft yes
+xftfont monospace:pixelsize=11
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+stippled_borders 7
+border_margin 4
+border_width 0
+default_color 00FFFF
+default_shade_color 000000
+default_outline_color FFFFFF
+alignment top_right
+gap_x 10
+gap_y 35
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer yes
+text_buffer_size 16000
+
+maximum_width 540
+minimum_size 480 0
+
+color1 DC143C
+color2 CB032B
+color3 00FF00
+color4 FFFF00
+color5 FF0000
+color6 008888
+
+lua_load ~/.conky/haxOS_Conky/syspanel.lua
+lua_draw_hook_post main
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+${alignr}$font net ────────────────────────────┘
+${if_match "${addr eth0}" != "No Address"}${alignr}${offset -217}${color2}[${color} ${addr eth0} ${color2}]${color}${else}${alignr}${offset -217}$font ${color2}[${color} ${color4}${addr eth0}${color} ${color2}]${color}${endif} ethernet ip ─┤
+${alignr}${offset -206}$font eth0
+${alignr}${offset -20}$font ${color2}[${color} ${upspeed eth0} ${color2}]${color}   up ─┤ ├─ up   $font ${color2}${color} ${upspeedgraph eth0 10,120 DC143C DC143C} ${color2}${color}
+${alignr}${offset -210}$font │ │
+${alignr}${offset -20}$font ${color2}[${color} ${downspeed eth0} ${color2}]${color} down ─┘ └─ down $font ${color2}${color} ${downspeedgraph eth0 10,120 DC143C DC143C} ${color2}${color}
