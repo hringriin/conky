@@ -42,7 +42,7 @@ color4 FFFF00
 color5 FF0000
 color6 008888
 
-lua_load ~/.conky/haxOS_Conky/conky_lunatico.lua
+lua_load ~/.conky/haxOS_Conky/syspanel.lua
 lua_draw_hook_post main
 
 TEXT
