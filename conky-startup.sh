@@ -2,7 +2,12 @@ sleep 2
 killall conky
 cd "/home/$USER/.conky/haxOS_Conky"
 conky -c "/home/$USER/.conky/haxOS_Conky/.conky_cal" &
+sleep 1
 conky -c "/home/$USER/.conky/haxOS_Conky/.conky_syspanel" &
+sleep 1
+conky -c "/home/$USER/.conky/haxOS_Conky/.conky_disk" &
+sleep 1
+conky -c "/home/$USER/.conky/haxOS_Conky/.conky_net" &
 sleep 1
 conky -c "/home/$USER/.conky/haxOS_Conky/.conky_clock" &
 sleep 1
