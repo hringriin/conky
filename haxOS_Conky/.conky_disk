@@ -1,0 +1,66 @@
+# this file goes in ~
+
+
+background yes
+use_xft yes
+xftfont monospace:pixelsize=11
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+stippled_borders 7
+border_margin 4
+border_width 0
+default_color 00FFFF
+default_shade_color 000000
+default_outline_color FFFFFF
+alignment top_right
+gap_x 10
+gap_y 35
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer yes
+text_buffer_size 16000
+
+maximum_width 540
+minimum_size 480 0
+
+color1 DC143C
+color2 CB032B
+color3 00FF00
+color4 FFFF00
+color5 FF0000
+color6 008888
+
+lua_load ~/.conky/haxOS_Conky/syspanel.lua
+lua_draw_hook_post main
+
+TEXT
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+${alignr}$font resources ─┤
+${alignr}$font ${color2}[${color} $diskio_read ${color2}]${color}   read ─┤   │
+${alignr}$font ${color2}[${color} $diskio_write ${color2}]${color}  write ─┤   │
+${alignr}$font │   │   │
+${alignr}$font ${color2}[${color} ${top_mem name 1}  ${top_mem mem 1} ${color2}]${color} ─┤   │   │
+${alignr}$font ${color2}[${color} ${top_mem name 2}  ${top_mem mem 2} ${color2}]${color} ─┤   │   │
+${alignr}$font ${color2}[${color} ${top_mem name 3}  ${top_mem mem 3} ${color2}]${color} ─┤   │   │
+${alignr}$font ${color2}[${color} ${top_mem name 4}  ${top_mem mem 4} ${color2}]${color} ─┘   │   │
+${alignr}$font │   │
+${alignr}$font ${color2}[${color} ${fs_used /boot} / ${fs_size /boot} ${color2}]${color} boot ─┤   │
+${alignr}$font ${color2}[${color} ${fs_bar 5,120 /boot/} ${color2}]${color} ─┘   │   │
+${alignr}$font │   │
+${alignr}$font ${color2}[${color} $swap/ $swapmax ${color2}]${color} swap ─┤   │
+${alignr}$font ${color2}[${color} ${swapbar 5,120} ${color2}]${color} ─┘   │   │
+${alignr}$font │   │
+${alignr}$font ${color2}[${color} ${fs_used /} / ${fs_size /} ${color2}]${color} root ─┘   │
+${alignr}$font ${color2}[${color} ${fs_bar 5,120 /} ${color2}]${color} ─┘       │
