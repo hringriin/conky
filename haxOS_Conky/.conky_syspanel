@@ -94,7 +94,7 @@ ${alignr}$font ${color2}[${color} $processes ${color2}]${color}   total ─┤  
 ${alignr}$font ${color2}[${color} $running_processes ${color2}]${color} running ─┤   │
 ${alignr}$font ${color2}[${color} $running_threads ${color2}]${color} threads ─┘   │
 ${alignr}$font │
-${alignr}$font temperature ─┘
+${alignr}$font temperatures ─┘
 ${alignr}${offset -28}$font cores ─┤
 ${alignr}${offset -28}$font ┌─────────────┤   │
 ${alignr}${offset -28}$font ─┤             │   │
