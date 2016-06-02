@@ -109,6 +109,7 @@ ${alignr}${offset -10}$font │
 ${alignr}${offset -10}$font net -────────────────────────────────────────────┘
 ${if_match "${addr enp0s25}" != "No Address"}${alignr}${offset -250}${color1}[${color} ${addr enp0s25} ${color1}]${color}${else}${alignr}${offset -240}$font ${color1}[${color} ${color2}${addr enp0s25}${color} ${color1}]${color}${endif} ethernet ip -─┤
 ${if_match "${addr wlp3s0}" != "No Address"}${alignr}${offset -250}${color1}[${color} ${addr wlp3s0} ${color1}]${color}${else}${alignr}${offset -240}$font ${color1}[${color} ${color2}${addr wlp3s0}${color} ${color1}]${color}${endif}     wifi ip -─┤
+${if_match "${addr wwp0s20u4i6}" != "No Address"}${alignr}${offset -250}${color1}[${color} ${addr wwp0s20u4i6} ${color1}]${color}${else}${alignr}${offset -240}$font ${color1}[${color} ${color2}${addr wwp0s20u4i6}${color} ${color1}]${color}${endif}     wwan ip -─┤
 ${alignr}${offset -250}$font ${color1}[${color} ${wireless_essid} ${color1}]${color} essid -─┤
 ${alignr}${offset -240}$font wlan0
 ${alignr}${offset -35}$font ${color1}[${color} ${upspeed wlp3s0} ${color1}]${color}   up -─┤│├─- up   $font ${color1}${color} ${upspeedgraph wlp3s0 10,120 DC143C DC143C} ${color1}${color}
