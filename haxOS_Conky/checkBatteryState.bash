@@ -65,25 +65,25 @@ case $value in
     1)
         case $batval0 in
             0)
-                echo -e "\${alignr}\${color7}\${blink !! EMPTY !!}\${color}  internal ◀─┘"
+                echo -e "\${alignr}\${offset 7}\${color7}\${blink !! EMPTY !!}\${color}  internal ◀─┘"                          # funktioniert
             ;;
-            [2-4]*)
+            [1-9] | 1[0-9])
+                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT0}  $batval0 %\${color}  internal ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color3}\${battery_time BAT0}\${color} ◀─┘"
+            ;;
+            2[0-9] | 3[0-9] | 4[0-9])
                 echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
                 echo -e "\${alignr}\${offset -28}\${color4}\${battery_time BAT0}\${color} ◀─┘"
             ;;
-            [5-8]* | 9[0-7])
+            5[0-9] | 6[0-9] | 7[0-9] | 8[0-9] | 9[0-7])
                 echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
                 echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT0}\${color} ◀─┘"
             ;;
             9[8-9] | 100)
                 echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  internal ◀─┘"
             ;;
-            [1-19]*)
-                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┘"
-                echo -e "\${alignr}\${offset -28}\${color3}\${battery_time BAT0}\${color} ◀─┘"
-            ;;
             *)
-                echo -e "this is interesting,\nint, no int bat!"
+                echo -e "this is interesting,\nint+slice, no int bat!"
             ;;
         esac
     ;;
@@ -91,22 +91,22 @@ case $value in
     2)
         case $batval0 in
             0)
-                echo -e "\${alignr}\${color7}\${blink !! EMPTY !!}\${color}  internal ◀─┤"
+                echo -e "\${alignr}\${offset 7}\${color7}\${blink !! EMPTY !!}\${color}  internal ◀─┤"                          # funktioniert
             ;;
-            [2-4]*)
+            [1-9] | 1[0-9])
+                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT0}  $batval0 %\${color}  internal ◀─┤"
+                echo -e "\${alignr}\${color3}\${battery_time BAT0}\${color} ◀─┘    │"
+            ;;
+            2[0-9] | 3[0-9] | 4[0-9])
                 echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
                 echo -e "\${alignr}\${color4}\${battery_time BAT0}\${color} ◀─┘    │"
             ;;
-            [5-8]* | 9[0-7])
+            5[0-9] | 6[0-9] | 7[0-9] | 8[0-9] | 9[0-7])
                 echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
                 echo -e "\${alignr}\${color5}\${battery_time BAT0}\${color} ◀─┘    │"
             ;;
             9[8-9] | 100)
-                echo -e "\${alignr}\${color6}FULL\${color}  internal ◀─┤"
-            ;;
-            [1-19]*)
-                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT0} $batval0 %\${color}  internal ◀─┤"
-                echo -e "\${alignr}\${color3}\${battery_time BAT0}\${color} ◀─┘    │"
+                echo -e "\${alignr}\${color6}FULL\${color}  internal ◀─┘    │"
             ;;
             *)
                 echo -e "this is interesting,\nint+slice, no int bat!"
@@ -117,22 +117,22 @@ case $value in
 
         case $batval1 in
             0)
-                echo -e "\${alignr}\${offset 7}\${color7}\${blink !! EMPTY !!}\${color}  external ◀─┘"
+                echo -e "\${alignr}\${offset 7}\${color7}\${blink !! EMPTY !!}\${color}  external ◀─┘"                          # funktioniert
             ;;
-            [2-4]*)
-                echo -e "\${alignr}\${offset 7}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
-                echo -e "\${alignr}\${offset 7}\${color4}\${battery_time BAT1}\${color} ◀─┘    │"
+            [1-9] | 1[0-9])
+                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT1}  $batval1 %\${color}  external ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color3}\${battery_time BAT1}\${color} ◀─┘"
             ;;
-            [5-8]* | 9[0-7])
+            2[0-9] | 3[0-9] | 4[0-9])
+                echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color4}\${battery_time BAT1}\${color} ◀─┘"
+            ;;
+            5[0-9] | 6[0-9] | 7[0-9] | 8[0-9] | 9[0-7])
                 echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┘"
                 echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT1}\${color} ◀─┘"
             ;;
             9[8-9] | 100)
                 echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  external ◀─┘"
-            ;;
-            [1-19]*)
-                echo -e "\${alignr}\${offset 7}\${color3}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
-                echo -e "\${alignr}\${offset 7}\${color3}\${battery_time BAT1}\${color} ◀─┘    │"
             ;;
             *)
                 echo -e "this is interesting,\nint+slice, no int bat!"
@@ -143,22 +143,22 @@ case $value in
     3)
         case $batval1 in
             0)
-                echo -e "\${alignr}\${color7}\${blink !! EMPTY !!}\${color}  external ◀─┤"
+                echo -e "\${alignr}\${offset 7}\${color7}\${blink !! EMPTY !!}\${color}  external ◀─┘"                          # funktioniert
             ;;
-            [2-4]*)
-                echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
-                echo -e "\${alignr}\${color4}\${battery_time BAT1}\${color} ◀─┘    │"
+            [1-9] | 1[0-9])
+                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT1}  $batval1 %\${color}  external ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color3}\${battery_time BAT1}\${color} ◀─┘"
             ;;
-            [5-8]* | 9[0-7])
-                echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
-                echo -e "\${alignr}\${color5}\${battery_time BAT1}\${color} ◀─┘    │"
+            2[0-9] | 3[0-9] | 4[0-9])
+                echo -e "\${alignr}\${color4}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color4}\${battery_time BAT1}\${color} ◀─┘"
+            ;;
+            5[0-9] | 6[0-9] | 7[0-9] | 8[0-9] | 9[0-7])
+                echo -e "\${alignr}\${color5}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┘"
+                echo -e "\${alignr}\${offset -28}\${color5}\${battery_time BAT1}\${color} ◀─┘"
             ;;
             9[8-9] | 100)
-                echo -e "\${alignr}\${color6}FULL\${color}  external ◀─┘"
-            ;;
-            [1-19]*)
-                echo -e "\${alignr}\${color3}\${battery_bar 10,75 BAT1} $batval1 %\${color}  external ◀─┤"
-                echo -e "\${alignr}\${color3}\${battery_time BAT1}\${color} ◀─┘    │"
+                echo -e "\${alignr}\${offset 7}\${color6}FULL\${color}  external ◀─┘"
             ;;
             *)
                 echo -e "this is interesting,\nint+slice, no int bat!"
