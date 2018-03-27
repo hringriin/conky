@@ -51,7 +51,6 @@ ${alignr}${offset -10}└──────────────────�
 ${alignr}${offset -10}$font │
 ${alignr}${offset -10}$font ${nodename} -─┤
 ${alignr}${offset -10}$font ${exec uname -r | cut -c 1-14}      kernel -─┤    │
-${alignr}${offset -10}$font $machine        arch -─┤    │
 ${alignr}${offset -10}$font $uptime      uptime -─┘    │
 ${alignr}${offset -10}$font │
 ${alignr}${offset -10}$font system -${color1}─┤${color}
