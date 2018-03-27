@@ -1,23 +1,23 @@
 sleep 2s
 killall conky
-cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conky_cal" &
-cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conky_clock" &
-cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conky_mpd" &
-cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conky_mpd_stuga" &
-cd "/home/$USER/.conky/haxOS_Conky"
-#conky -c "/home/$USER/.conky/haxOS_Conky/.conky_speed" &
-#cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conky_stod" &
-cd "/home/$USER/.conky/haxOS_Conky"
-#conky -c "/home/$USER/.conky/haxOS_Conky/.conky_updates" &
-#cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conky_weather" &
-cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conkyrc" &
+#cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conky_cal" &
+#cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conky_clock" &
+#cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conky_mpd" &
+#cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conky_mpd_stuga" &
+#cd "${HOME}/.conky/haxOS_Conky"
+#conky -c "${HOME}/.conky/haxOS_Conky/.conky_speed" &
+##cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conky_stod" &
+#cd "${HOME}/.conky/haxOS_Conky"
+#conky -c "${HOME}/.conky/haxOS_Conky/.conky_updates" &
+#cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conky_weather" &
+#cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conkyrc" &
 sleep 5
-cd "/home/$USER/.conky/haxOS_Conky"
-conky -c "/home/$USER/.conky/haxOS_Conky/.conky_battery" &
+#cd "${HOME}/.conky/haxOS_Conky"
+conky -c "${HOME}/.conky/haxOS_Conky/.conky_battery" &
